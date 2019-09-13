@@ -1,0 +1,41 @@
+<h2 class="text-center my-4">Detalhes da turma</h2>
+<div class="row">
+  <div class="col-6">
+    <h4 class="ml-2">Curso:</h4>
+    <p class="ml-2" *ngIf="editar"> {{turma.curso}}</p>
+    <input class="form-control m-2" *ngIf="!editar" [(ngModel)]="turma.curso">  
+  </div>
+  <div class="col-6">
+    <h4 class="ml-2">Academia:</h4>
+    <p class="ml-2" *ngIf="editar">{{turma.academia}}</p>
+    <input class="form-control m-2" *ngIf="!editar" [(ngModel)]="turma.academia"> 
+  </div>
+</div>
+<div class="row">
+    <div class="col-6">
+      <h4 class="ml-2">Data Início:</h4>
+      <p class="ml-2" *ngIf="editar"> {{turma.dataInicio | date}}</p>
+      <input class="form-control m-2" *ngIf="!editar" [(ngModel)]="turma.dataInicio">
+    </div>
+    <div class="col-6">
+      <h4 class="ml-2">Data Término:</h4>
+      <p class="ml-2" *ngIf="editar">{{turma.dataFim | date}}</p>
+      <input class="form-control m-2" *ngIf="!editar" [(ngModel)]="turma.dataFim">
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+      <h4 class="ml-2">Sala:</h4>
+      <p class="ml-2" *ngIf="editar">{{turma.sala}}</p>
+      <input class="form-control m-2" *ngIf="!editar" [(ngModel)]="turma.sala">
+    </div>
+    <div class="col-6">    
+      <h4 class="ml-2">Descrição:</h4>
+      <p class="ml-2" *ngIf="editar"> {{turma.descricao}}</p>
+      <input class="form-control m-2" *ngIf="!editar" [(ngModel)]="turma.descricao">
+    </div>
+</div>
+
+<button class="btn btn-primary m-2" *ngIf="editar" (click)="mudaDados()">Editar Turma</button>
+<button class="btn btn-success m-2" *ngIf="!editar" (click)="mudaDados()">Gravar</button>
+<hr>

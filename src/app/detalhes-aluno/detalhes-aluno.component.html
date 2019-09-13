@@ -1,0 +1,15 @@
+<div *ngIf="show" >
+  <h5>Nome:</h5>
+  <input class="form-control" [(ngModel)]="aluno.nome">
+  <h5>Idade:</h5>
+  <input class="form-control" [(ngModel)]="aluno.idade">
+  <h5>Morada:</h5>
+  <input class="form-control" [(ngModel)]="aluno.morada">
+  <h5>Email:</h5>
+  <input class="form-control" [(ngModel)]="aluno.email">
+  <h5>Telefone:</h5>
+  <input class="form-control" [(ngModel)]="aluno.telefone">
+  <span class="">
+      <button class="btn btn-primary m-2" (click)="flag()">Editar Aluno</button>
+  </span>
+</div>

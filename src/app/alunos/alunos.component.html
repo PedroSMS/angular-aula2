@@ -1,0 +1,13 @@
+<h4 class="text-center mt-2">Alunos</h4>
+<div class="row">
+  <div class="col-6"> 
+    <ul *ngFor="let aluno of alunos">
+      <li>{{aluno.nome}}</li>
+      <button class="btn btn-success btn-sm" (click)="selecionaAluno(aluno); flag()" *ngIf="show2">Detalhes</button>
+      <button class="btn btn-outline-info btn-sm" (click)="flag()" *ngIf="!show2">Detalhes</button>
+    </ul>
+  </div>
+  <div class="col-6 mt-4"> 
+    <app-detalhes-aluno [aluno]="alunoSelec" [show]="show"></app-detalhes-aluno>
+  </div>
+</div>
