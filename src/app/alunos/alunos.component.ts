@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Aluno} from '../Aluno';
-import { ALUNOS } from '../alunos-dummy';
+import { SalunosService } from '../salunos.service';
 
 @Component({
   selector: 'app-alunos',
@@ -8,15 +8,13 @@ import { ALUNOS } from '../alunos-dummy';
   styleUrls: ['./alunos.component.css']
 })
 export class AlunosComponent implements OnInit {
-  alunos = ALUNOS;
+  alunos = []
 
-  show2:Boolean;
   show:Boolean;
   alunoSelec:Aluno;
 
   constructor() {
     this.show=false;
-    this.show2=true;
    }
    
   selecionaAluno(aluno){
@@ -25,7 +23,6 @@ export class AlunosComponent implements OnInit {
 
   flag(){
     this.show = !this.show;
-    this.show2 = !this.show2;
   }
 
   ngOnInit() {
