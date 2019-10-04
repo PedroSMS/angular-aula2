@@ -11,12 +11,10 @@ export class DetalhesAlunoComponent implements OnInit {
   @Input() show:Boolean;
 
   constructor() { 
-    this.show=false;
+
   }
 
-  flag(){
-    this.show=!this.show;
-  }
+
   ngOnInit() {
   }
 }
