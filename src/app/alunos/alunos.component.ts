@@ -13,8 +13,9 @@ export class AlunosComponent implements OnInit {
   show:Boolean;
   alunoSelec:Aluno;
 
-  constructor() {
+  constructor(private servicealunos:SalunosService) {
     this.show=false;
+    this.alunos = this.servicealunos.getAlunos();
    }
    
   selecionaAluno(aluno){

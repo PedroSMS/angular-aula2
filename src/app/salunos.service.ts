@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Aluno } from './aluno';
 import { ALUNOS } from './alunos-dummy';
+import {Observable, of, BehaviorSubject} from 'rxjs';
 
 @Injectable()
 export class SalunosService {
@@ -8,8 +9,8 @@ export class SalunosService {
   constructor() { 
   }
 
-  getAlunos(){
-    return ALUNOS;
+  getAlunos(): Observable<Aluno[]>{
+    return of(ALUNOS);
   }
 
 }
