@@ -8,18 +8,22 @@ import { SalunosService } from '../salunos.service';
   styleUrls: ['./alunos.component.css']
 })
 export class AlunosComponent implements OnInit {
-  alunos = []
+  alunos = [];
 
   show:Boolean;
   alunoSelec:Aluno;
 
   constructor(private servicealunos:SalunosService) {
     this.show=false;
-    this.alunos = this.servicealunos.getAlunos();
-   }
-   
+    this.getAlunos();
+  }
+
   selecionaAluno(aluno){
     this.alunoSelec = aluno;
+  }
+
+  getAlunos(){
+    this.servicealunos.getAlunos().subscribe(dados => this.alunos = dados);
   }
 
   flag(){

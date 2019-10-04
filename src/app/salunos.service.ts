@@ -6,6 +6,7 @@ import {Observable, of, BehaviorSubject} from 'rxjs';
 @Injectable()
 export class SalunosService {
   alunos = ALUNOS;
+
   constructor() { 
   }
 
