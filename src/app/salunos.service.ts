@@ -6,6 +6,7 @@ import {Observable, of, BehaviorSubject} from 'rxjs';
 @Injectable()
 export class SalunosService {
   alunos = ALUNOS;
+  alunoSelecionado:Aluno;
 
   constructor() { 
   }
@@ -13,5 +14,11 @@ export class SalunosService {
   getAlunos(): Observable<Aluno[]>{
     return of(this.alunos);
   }
+  setAluno(aluno){
+    this.alunoSelecionado.next(aluno);
+  }
 
+  getAluno() : Observable<Aluno>{
+    return this.alunoSelecionado;
+  }
 }
